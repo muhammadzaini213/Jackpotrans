@@ -117,10 +117,20 @@ function Welcome({ onSave }) {
 }
 
 function Curved({ text }) {
+  const layers = Array.from({ length: 20 }, (_, k) => k + 1).reverse()
   return (
-    <svg className="curve" viewBox="0 0 480 88" role="img" aria-label={text}>
+    <svg className="curve" viewBox="0 0 500 112" role="img" aria-label={text}>
       <path id="title-arc" d="M24 74 Q240 6 456 74" fill="none" />
-      <text fontSize="40" fontWeight="800" fill="currentColor">
+      {layers.map((i) => {
+        const solid = i <= 6
+        const o = solid ? 1 : Math.max(0.04, 0.5 * (1 - (i - 6) / 14))
+        return (
+          <text key={i} transform={`translate(${i} ${i})`} fontSize="40" fontWeight="800" fill={solid ? '#061a33' : '#03101f'} fillOpacity={o}>
+            <textPath href="#title-arc" startOffset="50%" textAnchor="middle">{text}</textPath>
+          </text>
+        )
+      })}
+      <text fontSize="40" fontWeight="800" fill="#fff">
         <textPath href="#title-arc" startOffset="50%" textAnchor="middle">{text}</textPath>
       </text>
     </svg>

@@ -34,8 +34,9 @@ input[type=checkbox]{width:32px;min-height:32px}
 .tabs button{flex:1 1 140px}
 .tabs button:not(.on){background:transparent;color:var(--fg);border-color:var(--bd)}
 .banner{background:linear-gradient(135deg,#0b2545,#1d4f91) center/cover;color:#fff;border-radius:18px;padding:2rem 1.2rem;margin-bottom:1.5rem;text-align:center;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem}
-.banner h2{font-size:2rem;margin:0;text-shadow:0 2px 6px rgba(0,0,0,.5)}
-.banner svg.curve{width:min(100%,440px);height:auto;vertical-align:middle;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+.banner h2{font-size:2rem;margin:0;color:#fff;text-shadow:1px 1px 0 #061a33,2px 2px 0 #061a33,3px 3px 0 #061a33,4px 4px 0 #061a33,5px 5px 0 #061a33,6px 6px 0 #041226,7px 7px 0 rgba(3,13,28,.5),8px 8px 0 rgba(3,13,28,.46),9px 9px 0 rgba(3,13,28,.43),10px 10px 0 rgba(3,13,28,.39),11px 11px 0 rgba(3,13,28,.36),12px 12px 0 rgba(3,13,28,.32),13px 13px 0 rgba(3,13,28,.29),14px 14px 0 rgba(3,13,28,.25),15px 15px 0 rgba(3,13,28,.21),16px 16px 0 rgba(3,13,28,.18),17px 17px 0 rgba(3,13,28,.14),18px 18px 0 rgba(3,13,28,.11),19px 19px 0 rgba(3,13,28,.07),20px 20px 0 rgba(3,13,28,.04)}
+.banner h2 svg,.banner h2 svg text{text-shadow:none}
+.banner svg.curve{width:min(100%,440px);height:auto;vertical-align:middle}
 .banner p{margin:0 0 .6rem;font-size:1.2rem;max-width:640px;text-shadow:0 2px 6px rgba(0,0,0,.5)}
 .banner button{background:#fff;color:#0b2545;border-color:#fff}
 .art{max-width:760px;margin:0 auto;background:var(--card);border:2px solid var(--bd);border-radius:16px;overflow:hidden}
