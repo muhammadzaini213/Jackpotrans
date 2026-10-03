@@ -3,7 +3,7 @@ import { supabase } from './supabase'
 import Admin from './Admin'
 
 const DEF_BANNER = {
-  title: 'Perjalanan Nyaman, Tanpa Repot',
+  title: 'Perjalanan Nyaman, Tanpa Repot, Harga Ngesot',
   sub: 'Pesan mobil dengan sopir berpengalaman. Lanjut lewat WhatsApp.',
   img: '',
 }
@@ -122,7 +122,7 @@ function Home({ data, go, jump }) {
   return (
     <>
       <section className="banner" style={b.img ? { backgroundImage: `linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('${b.img}')` } : undefined}>
-        <h2>{b.title}</h2>
+        <h2>{b.title.split(/(Harga Ngesot)/i).map((p, i) => (p.toLowerCase() === 'harga ngesot' ? <em key={i}>{p}</em> : p))}</h2>
         <p>{b.sub}</p>
         <button onClick={() => jump('cars')}>Lihat Mobil ⬇</button>
       </section>
