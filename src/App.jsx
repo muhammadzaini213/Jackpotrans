@@ -116,13 +116,24 @@ function Welcome({ onSave }) {
   )
 }
 
+function Curved({ text }) {
+  return (
+    <svg className="curve" viewBox="0 0 480 88" role="img" aria-label={text}>
+      <path id="title-arc" d="M24 74 Q240 6 456 74" fill="none" />
+      <text fontSize="40" fontWeight="800" fill="currentColor">
+        <textPath href="#title-arc" startOffset="50%" textAnchor="middle">{text}</textPath>
+      </text>
+    </svg>
+  )
+}
+
 function Home({ data, go, jump }) {
   const { banner: b, arts } = data
   const cars = data.cars.filter((c) => c.active)
   return (
     <>
       <section className="banner" style={b.img ? { backgroundImage: `linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('${b.img}')` } : undefined}>
-        <h2>{b.title.split(/(Harga Ngesot)/i).map((p, i) => (p.toLowerCase() === 'harga ngesot' ? <em key={i}>{p}</em> : p))}</h2>
+        <h2>{b.title.split(/(Harga Ngesot)/i).map((p, i) => (p.toLowerCase() === 'harga ngesot' ? <Curved key={i} text={p} /> : p))}</h2>
         <p>{b.sub}</p>
         <button onClick={() => jump('cars')}>Lihat Mobil ⬇</button>
       </section>
